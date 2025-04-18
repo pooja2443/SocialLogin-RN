@@ -4,11 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import ContactsScreen from './screens/ContactScreen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
+    <SafeAreaProvider>
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
@@ -23,6 +25,7 @@ const App = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
